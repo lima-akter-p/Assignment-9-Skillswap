@@ -1,12 +1,13 @@
 import React, { use } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContex } from '../Provider/AuthContex';
+import { toast } from 'react-toastify';
 
 
 
 const Register = () => {
      const navigate = useNavigate()
-    const {createUser, setUser} = use(AuthContex);
+    const {createUser, updateUser} = use(AuthContex);
     const hanldeRegister = (e) =>{
         e.preventDefault();
         console.log(e.target);
@@ -14,16 +15,22 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const photo = form.photo.value;
+        const updated = {displayName:name,photoURL:photo};
         
         const password = form.password.value;
         console.log({name,email,password,photo});
         createUser(email,password)
-        .then((result) => {
-            const user = result.user;
-            setUser(user);
-            navigate("/")
+        .then(() => {
+          
+            return  updateUser(updated)
+            
+         
             // console.log(user)
 
+        })
+        .then(() =>{
+            toast('Register successful')
+            navigate("/")
         })
         .catch((error) => {
             const errormessage = error.message;

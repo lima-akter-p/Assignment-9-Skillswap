@@ -7,6 +7,7 @@ import AuthLayout from "../Layout/AuthLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRouter from "./PrivateRouter";
+import EditProfile from "../Pages/EditProfile";
 
 
 
@@ -37,6 +38,13 @@ import PrivateRouter from "./PrivateRouter";
             path:"/profile",
             element:<PrivateRouter>
               <MyProfile></MyProfile>
+            </PrivateRouter>
+          },
+          {
+            path:"/edit-profile",
+
+            element:<PrivateRouter>
+              <EditProfile></EditProfile>
             </PrivateRouter>
           }
         ],

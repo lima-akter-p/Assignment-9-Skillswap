@@ -16,7 +16,7 @@ const SkillDetails = () => {
         
 
          <img className='w-100 ' src={match?.image} alt="" />
-         <h2 className='text-xl font-bold'>{match?.providerName}</h2>
+         <h2 className='text-xl font-bold'>Name:{match?.providerName}</h2>
          <h2 className='font-semibold'>{match?.providerEmail}</h2>
          <p className='font-semibold'>{match?.skillName}</p>
          <p className='font-semibold'>{match?.price}</p>

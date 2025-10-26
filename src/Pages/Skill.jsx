@@ -22,7 +22,7 @@ const Skill = ({singleSkill}) => {
     <div className="card-actions ">
      <Link to={`/skill-details/${skillId}`}> <button className="btn btn-primary">Skill Details</button></Link>
     </div>
-    <SkillDetails singleSkill={singleSkill}></SkillDetails>
+    {/* <SkillDetails singleSkill={singleSkill}></SkillDetails> */}
   </div>
 </div>
 
