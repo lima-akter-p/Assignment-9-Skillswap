@@ -35,7 +35,9 @@ import PrivateRouter from "./PrivateRouter";
           },
           {
             path:"/profile",
-            element:<PrivateRouter><MyProfile></MyProfile></PrivateRouter>
+            element:<PrivateRouter>
+              <MyProfile></MyProfile>
+            </PrivateRouter>
           }
         ],
        
