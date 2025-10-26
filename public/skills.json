@@ -1,0 +1,77 @@
+[
+     {
+
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+     "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners.",
+     "image": "https://i.ibb.co.com/DDkPpqdR/giterlesson.webp",
+     "category": "Music"
+
+  },
+  {
+    "skillId": 2,
+    "skillName": "Introduction to Digital Photography",
+    "providerName": "Clara Chen",
+    "providerEmail": "clara@skillswap.com",
+    "price": 25,
+    "rating": 4.5,
+    "slotsAvailable": 5,
+    "description": "Learn camera basics, composition, and lighting for stunning photos.",
+    "image": "https://i.ibb.co.com/3ywFFZVm/photography.jpg",
+    "category": "Creative Arts"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Basic Conversational Spanish",
+    "providerName": "Veney macro",
+    "providerEmail": "marco@skillswap.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Essential phrases and vocabulary for everyday conversations.",
+    "image": "https://i.ibb.co.com/rGW3HBV9/common-spanish-phrases.jpg",
+    "category": "Languages"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Absolute Beginners",
+    "providerName": "Priya Sharma",
+    "providerEmail": "priya@skillswap.com",
+    "price": 18,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Gentle introduction to fundamental yoga poses and breathing techniques.",
+    "image": "https://i.ibb.co.com/YTBDvzf6/images.jpg",
+    "category": "Health & Fitness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Coding with Python Fundamentals",
+    "providerName": "Jhanker Mahbub",
+    "providerEmail": "david@skillswap.com",
+    "price": 30,
+    "rating": 4.6,
+    "slotsAvailable": 4,
+    "description": "Learn the basics of programming and data structures using Python.",
+    "image": "https://i.ibb.co.com/3YF1Xg6Y/images-1.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Learning English and IELTS",
+    "providerName": "Munjeri Shahid",
+    "providerEmail": "sofia@skillswap.com",
+    "price": 22,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Master simple, delicious pasta recipes from scratch.",
+    "image": "https://i.ibb.co.com/L753PGW/ms-onset.jpg",
+    "category": "Culinary"
+  }
+ 
+]
