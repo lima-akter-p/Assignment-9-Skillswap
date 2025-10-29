@@ -25,15 +25,15 @@ const SwiperSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-            <div className='flex items-center justify-between max-h-[60vh] gap-5 flex-col md:flex-row p-6'>
-                <img className='w-full max-w-150 mx-auto h-full ' src="https://i.ibb.co.com/3YF1Xg6Y/images-1.jpg" alt="" />
+            <div className='flex items-center justify-between max-h-[60vh] gap-5 flex-col md:flex-row p-9'>
+                <img className='object-cover w-full max-w-150 mx-auto h-full  ' src="https://i.ibb.co.com/3YF1Xg6Y/images-1.jpg" alt="" />
                 <h1 className='text-3xl font-bold text-center'>Learn the basics of programming and data structures using Python.</h1>
 
             </div>
         </SwiperSlide>
 
          <SwiperSlide>
-            <div className='flex items-center justify-between max-h-[60vh] gap-5 flex-col md:flex-row p-6'>
+            <div className='flex items-center justify-between max-h-[60vh] gap-5 flex-col md:flex-row p-9'>
                 <img className='w-full max-w-150 mx-auto h-full ' src="https://i.ibb.co.com/L753PGW/ms-onset.jpg" alt="" />
                 <h1 className='text-3xl font-bold'>Learning English Vocavolery and language</h1>
 

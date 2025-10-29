@@ -1,12 +1,22 @@
-import React, { use, useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContex } from '../Provider/AuthContex';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
+
+
+
+
+
+
 const Login = () => {
       const [showpassword,setShowpassword] = useState(false);
+      
+      const emailRef = useRef();
     const {signIn} = use(AuthContex);
+    const {reset} = use(AuthContex);
+   
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
@@ -28,11 +38,27 @@ const Login = () => {
             const errormessage = error.massage;
             alert(errormessage);
         });
-    }
+    };
          const handleTogglePassword = (event) =>{
             event.preventDefault();
             setShowpassword(!showpassword)
-        }
+        };
+
+          const handleForgetPassword = () =>{
+            
+            const email = emailRef.current.value;
+            console.log('forget password',email);
+            // sendPasswordResetEmail(auth,email)
+            // sendPasswordResetEmail(auth ,email)
+            reset( email)
+            .then(() =>{
+                
+                alert('please check your email');
+            })
+            .catch()
+            
+
+          };
     return (
         <div className='flex justify-center min-h-screen items-center'>
             <div className="hero  min-h-screen">
@@ -47,7 +73,11 @@ const Login = () => {
                              <fieldset className="fieldset">
                             {/* email */}
                                 <label className="label">Email</label>
-                                <input type="email" name="email" className="input" placeholder="Email" />
+                                <input type="email" 
+                                name="email" 
+                                className="input"
+                                ref={emailRef}
+                                 placeholder="Email" />
                                 {/* password */}
                                <div className='relative'>
                                  <label className="label">Password</label>
@@ -57,7 +87,7 @@ const Login = () => {
                                     {showpassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                                 </button>
                                </div>
-                                <div><a className="link link-hover">Forgot password?</a></div>
+                                <div onClick={handleForgetPassword}><a className="link link-hover">Forgot password?</a></div>
                                 <button type="submit" className="btn btn-neutral mt-4">Login</button>
                                 <p className='text-xl font-semibold'>Dont Have an account ? {" "} <Link to="/auth/register">Register</Link></p>
 

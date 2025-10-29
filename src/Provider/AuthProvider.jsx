@@ -1,11 +1,11 @@
 import React, {  useEffect, useState } from 'react';
 import app from '../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword, getAuth,  onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth,  onAuthStateChanged,  sendPasswordResetEmail,  signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { AuthContex } from './AuthContex';
 
 
 
-const auth = getAuth(app);
+  const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
@@ -25,6 +25,10 @@ const AuthProvider = ({children}) => {
         return updateProfile(auth.currentUser, updatedData)
 
     };
+    const reset = (email) => {
+        return sendPasswordResetEmail(auth,email)
+    };
+  
    
    
 
@@ -55,7 +59,9 @@ const AuthProvider = ({children}) => {
         createUser,
         logOut,
         signIn,
-        updateUser
+        updateUser,
+        reset
+      
         
     };
   return <AuthContex value={authData}>{children}</AuthContex>;
