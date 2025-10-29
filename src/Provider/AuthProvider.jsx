@@ -1,10 +1,10 @@
 import React, {  useEffect, useState } from 'react';
 import app from '../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword, getAuth,  onAuthStateChanged,  sendPasswordResetEmail,  signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth,  GoogleAuthProvider,  onAuthStateChanged,  sendPasswordResetEmail,  signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { AuthContex } from './AuthContex';
 
 
-
+const googleAuthProvider = new GoogleAuthProvider();
   const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
@@ -28,6 +28,11 @@ const AuthProvider = ({children}) => {
     const reset = (email) => {
         return sendPasswordResetEmail(auth,email)
     };
+
+     const createUG = () => {
+    
+    return signInWithPopup(auth,googleAuthProvider);
+  };
   
    
    
@@ -60,7 +65,8 @@ const AuthProvider = ({children}) => {
         logOut,
         signIn,
         updateUser,
-        reset
+        reset,
+        createUG
       
         
     };
