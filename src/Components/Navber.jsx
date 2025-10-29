@@ -20,7 +20,7 @@ const Navber = () => {
     }     
    
     return (
-        <div className='w-11/12 mx-auto flex justify-between shadow-sm p-5'>
+        <div className='w-11/12 mx-auto flex justify-between  shadow-sm p-5'>
 
             <div>
                 <h2 className='text-xl font-bold text-violet-700'>Skill<span className='text-pink-700'>S</span>wap</h2>
