@@ -1,6 +1,6 @@
 
 import {  useParams } from 'react-router';
-import useData from '../Hook/UseData';
+import useData from '../Hook/useData';
 
 const SkillDetails = () => {
     const {data,loading,} = useData()
@@ -12,7 +12,7 @@ const SkillDetails = () => {
     const match = data.find(d=>d.skillId == id)
     console.log(match)
      return (
-       <div className='mt-6'>
+       <div className='my-6 w-11/12 mx-auto'>
         
 
          <img className='w-100 mt-5 p-5' src={match?.image} alt="" />

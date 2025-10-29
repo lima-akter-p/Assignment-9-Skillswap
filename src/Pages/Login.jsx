@@ -22,17 +22,18 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
     const handleLoin = (e) => {
         e.preventDefault();
-        console.log(e.target);
+        // console.log(e.target);
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log({ email, password });
+        // console.log({ email, password });
         signIn(email, password)
             .then((result) => {
                 const user = result.user;
+                //  console.log(user);
                 navigate(from, { replace: true });
 
-                console.log(user);
+               
             })
             .catch((error) => {
                 const errormessage = error.massage;

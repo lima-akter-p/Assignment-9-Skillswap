@@ -16,9 +16,9 @@ const Navber = () => {
             .then(() => {
                 alert('You logged Out successfully');
             })
-            .catch((error) => {
-                console.log(error);
-            });
+            // .catch((error) => {
+            //    console.log(error);  
+            // });
     }
 
 

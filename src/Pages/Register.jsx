@@ -14,7 +14,7 @@ const Register = () => {
     const {createUser, updateUser} = use(AuthContex);
     const hanldeRegister = (e) =>{
         e.preventDefault();
-        console.log(e.target);
+        // console.log(e.target);
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -22,7 +22,7 @@ const Register = () => {
         const updated = {displayName:name,photoURL:photo};
         
         const password = form.password.value;
-        console.log({name,email,password,photo});
+        // console.log({name,email,password,photo});
         const passwordPettern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         if(!passwordPettern.test(password)){
             console.log('password didn match')
