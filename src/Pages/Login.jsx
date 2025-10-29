@@ -1,9 +1,11 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContex } from '../Provider/AuthContex';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Login = () => {
+      const [showpassword,setShowpassword] = useState(false);
     const {signIn} = use(AuthContex);
     const location = useLocation();
     const navigate = useNavigate();
@@ -27,6 +29,10 @@ const Login = () => {
             alert(errormessage);
         });
     }
+         const handleTogglePassword = (event) =>{
+            event.preventDefault();
+            setShowpassword(!showpassword)
+        }
     return (
         <div className='flex justify-center min-h-screen items-center'>
             <div className="hero  min-h-screen">
@@ -43,8 +49,14 @@ const Login = () => {
                                 <label className="label">Email</label>
                                 <input type="email" name="email" className="input" placeholder="Email" />
                                 {/* password */}
-                                <label className="label">Password</label>
-                                <input type="password" name="password" className="input" placeholder="Password" />
+                               <div className='relative'>
+                                 <label className="label">Password</label>
+                                <input type={showpassword?'text':'password'} name="password" className="input" placeholder="Password" />
+                                <button  onClick={ handleTogglePassword}
+                                className="btn btn-sx absolute top-4 right-4">
+                                    {showpassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                                </button>
+                               </div>
                                 <div><a className="link link-hover">Forgot password?</a></div>
                                 <button type="submit" className="btn btn-neutral mt-4">Login</button>
                                 <p className='text-xl font-semibold'>Dont Have an account ? {" "} <Link to="/auth/register">Register</Link></p>

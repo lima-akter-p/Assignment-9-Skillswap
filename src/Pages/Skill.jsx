@@ -16,7 +16,7 @@ const Skill = ({singleSkill}) => {
     <h2 className="card-title font-bold">{skillName}</h2>
     <div className='flex justify-between py-3 text-xl font-semibold'>
         <div><p>Rating:{rating}</p></div>
-        <div><p>Price:{price}</p></div>
+        <div><p>Price:{price}$</p></div>
     </div>
     
     <div className="card-actions ">

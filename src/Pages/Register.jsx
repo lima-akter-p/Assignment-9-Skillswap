@@ -1,12 +1,16 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContex } from '../Provider/AuthContex';
 import { toast } from 'react-toastify';
+import { FaEye } from 'react-icons/fa';
+import { FaEyeSlash } from 'react-icons/fa6';
 
 
 
 const Register = () => {
      const navigate = useNavigate()
+     const [error,setError] = useState('')
+     const [showpassword,setShowpassword] = useState(false)
     const {createUser, updateUser} = use(AuthContex);
     const hanldeRegister = (e) =>{
         e.preventDefault();
@@ -19,6 +23,16 @@ const Register = () => {
         
         const password = form.password.value;
         console.log({name,email,password,photo});
+        const passwordPettern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if(!passwordPettern.test(password)){
+            console.log('password didn match')
+           setError('Password must be at least 6 character include one uppercase and lowercase')
+            return;
+
+
+        }
+
+
         createUser(email,password)
         .then(() => {
           
@@ -34,10 +48,14 @@ const Register = () => {
         })
         .catch((error) => {
             const errormessage = error.message;
-            alert(errormessage)
+            setError(errormessage)
         })
 
     }
+        const handleTogglePassword = (event) =>{
+            event.preventDefault();
+            setShowpassword(!showpassword)
+        }
     return (
         <div className='flex justify-center min-h-screen items-center'>
             <div className="hero  min-h-screen">
@@ -60,13 +78,23 @@ const Register = () => {
                                 <label className="label">photo URL</label>
                                 <input type="photo" name="photo" className="input" placeholder="photo url" required />
                                 {/* password */}
+                                <div className='relative'>
                                 <label className="label">Password</label>
-                                <input type="password" className="input" name="password" placeholder="Password" required />
+                                <input type={showpassword?'text':'password'} className="input" name="password" placeholder="Password" required />
+                                <button 
+                                onClick={ handleTogglePassword}
+                                className="btn btn-xs absolute top-6 right-5">
+                                 {showpassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                                </button>
+                                </div>
                               
                                 <button type="submit" className="btn btn-neutral mt-4">Register</button>
                                 <p className='text-xl font-semibold'>Allready Have an account? ? {" "} <Link to="/auth/login">Login</Link></p>
 
                             </fieldset>
+                            {
+                               error && <p className='text-red-600'>{error}</p> 
+                            }
                         </form>
                     </div>
                 </div>
