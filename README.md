@@ -60,6 +60,8 @@ Examples of skills:
 
 
 🧭 How to Run the Project Locally
+
+
 1️⃣ Clone the repository
 
 
@@ -67,12 +69,12 @@ Examples of skills:
 
 
 3️⃣ Install dependencies
-npm install
+    npm install
 
 
 
 5️⃣ Start development server
-npm run dev
+   npm run dev
 
 
 👉 Open in browser:
