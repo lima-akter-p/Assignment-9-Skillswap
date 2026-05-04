@@ -70,6 +70,7 @@ Examples of skills:
 
 ## Clone the repository
 ```bash
+(https://github.com/lima-akter-p/Assignment-9-Skillswap.git)
 
 ```
 
