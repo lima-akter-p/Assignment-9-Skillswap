@@ -67,19 +67,23 @@ Examples of skills:
 🧭 How to Run the Project Locally
 
 
-1️⃣ Clone the repository
+
+## Clone the repository
+```bash
+
+```
 
 
-2️⃣ Navigate to the project folder
+## Go to the project folder
 
 
-3️⃣ Install dependencies
-    npm install
+## Install dependencies
+  npm install
 
 
 
-5️⃣ Start development server
-   npm run dev
+## Start development server
+npm run dev
 
 
 
