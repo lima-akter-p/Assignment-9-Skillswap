@@ -1,7 +1,12 @@
 🚀 Project Overview
-# SkillSwap
+## SkillSwap
 
 SkillSwap helps people share knowledge and learn new skills without barriers.
+Users can offer their skills and services to others on the platform
+Users can learn new skills or trade their own skills with different people
+People can connect with others locally, reducing the need to travel far
+Ratings and reviews help maintain trust and ensure quality skill exchange
+It is designed to make skill sharing easy, collaborative, and accessible for everyone.
 
 Through this platform:
 
@@ -77,7 +82,7 @@ Examples of skills:
    npm run dev
 
 
-👉 Open in browser:
+
 
 
 
